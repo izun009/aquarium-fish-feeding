@@ -12,5 +12,6 @@ to try mqttcloud from android app:
 - choose type depend on your project (button, text, progress, image, etc)
 - lets try !
 
-to see your log, just click log on mqttcloud
-to see your device connected or not, just click connection on mqttcloud
+note:
+- to see your log, just click log on mqttcloud
+- to see your device connected or not, just click connection on mqttcloud
