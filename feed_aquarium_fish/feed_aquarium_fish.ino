@@ -47,7 +47,7 @@ void MQTTcallback(char* topic, byte* payload, unsigned int length) {
     message = message + (char)payload[i];  //konversi byte ke String
   }
   Serial.print(message);
-  if (message == 1) { // pake button
+//  if (message == 1) { // pake button
 //    servo.write(90);
 //    delay(100);
 //    servo.write(0);
