@@ -8,13 +8,12 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 #include <Servo.h>
-//#define LED D0
 
 // ganti
-const char* ssid = "wifigratis";
-const char* password =  "Sayurbayem";
-const char* mqttServer = "m14.cloudmqtt.com";
-const int mqttPort = 16497;
+const char* ssid = "ssid";
+const char* password =  "password";
+const char* mqttServer = "server address";
+const int mqttPort = 00000;
 const char* mqttUser = "username";
 const char* mqttPassword = "password";
 
@@ -24,10 +23,7 @@ Servo servo;
 
 void setup() {
   delay(1000);
-  servo.attach(5); // D1
-  servo.write(0);
-  pinMode(D0, OUTPUT);
-  digitalWrite(D0, LOW);
+  servo.attach(2); // D1
   Serial.begin(115200);
   WifiSetup();
   client.setServer(mqttServer, mqttPort);
@@ -54,17 +50,11 @@ void MQTTcallback(char* topic, byte* payload, unsigned int length) {
 //    delay(100);
 //  }
   if (message == "on") {
-    servo.write(90);
-    delay(100);
+    servo.write(45);
+    delay(300);
     servo.write(0);
-    delay(100);
+    delay(300);
   }
-  //  if (message == "on") {
-  //    digitalWrite(D0, HIGH);
-  //  } else {
-  //    digitalWrite(D0, LOW);
-  //  }
-
   Serial.println();
   Serial.println("=======================================");
 }
